@@ -1,0 +1,64 @@
+{% extends layout %}
+
+{% block title %}
+    {{app.translator.trans('homepage')}}
+{% endblock %}
+
+{% block stylesheets %}
+{% endblock %}
+
+{% block header %}
+    {{app.translator.trans('content.header')}}
+{% endblock %}
+
+{% block content %}
+<div class="sixteen columns">
+    <h1 class="remove-bottom" style="margin-top: 40px">artur-gajewski/silex-skeleton</h1>
+    <h5>Version 0.1</h5>
+    <hr />
+</div>
+<div class="one-third column">
+    <h3>{{app.translator.trans('content.about')}}</h3>
+    <p>
+        artur-gajewski/silex-skeleton is a starting point for your <a href="http://silex.sensiolabs.org/">Silex</a> project.
+        It combines a basic Silex configuration with the base of <a href="http://html5boilerplate.com/">HTML5BoilerPlate</a> and CSS from <a href="http://getskeleton.com/">Skeleton</a>.
+        <br/>Feel free to clone this project and start developing your own Silex application.
+    </p>
+    <p>
+        artur-gajewski/silex-skeleton aims to provide a working Silex application that is easily created on hosted environments as well.
+        No more playing around with .htaccess file or dealing with customer support as this package is structures so that you can copy the files to your hosted environment and fire up the app.
+    </p>
+</div>
+<div class="one-third column">
+    <h3>{{app.translator.trans('content.features')}}</h3>
+    <ul class="square">
+        <li>HttpCacheServiceProvider</li>
+        <li>SessionServiceProvider</li>
+        <li>TranslationServiceProvider</li>
+        <li>Translation routing</li>
+        <li>TwigServiceProvider</li>
+        <li>ConfigServiceProvider</li>
+        <li>UrlGeneratorServiceProvider</li>
+        <li>Grid CSS</li>
+        <li>Base CSS</li>
+        <li>Typography CSS</li>
+        <li>No web folder</li>
+        <li>Responsive design</li>
+    </ul>
+</div>
+<div class="one-third column">
+    <h3>{{app.translator.trans('content.contribute')}}</h3>
+    <p>Check out the <a href="https://github.com/artur-gajewski/silex-skeleton">project on github</a> and contribute by reporting bugs or creating a pull request. All help is very welcome!</p>
+    <h3>{{app.translator.trans('content.origin')}}</h3>
+    <p>This project is based on Ivo Bathke's wonderful lean setup of Silex. Check out <a href="https://github.com/ivoba/superleansilexplate">his project</a> at Github. </p>
+    <p>Since setting up a Silex project is a mess on a hosted environment, I decided to restructure his package in order to support framework usage without seperate web folder. All application related code is now located under 'silex' folder which is not accessible to browsers.</p>
+</div>
+<div class="clear"></div>
+{% endblock %}
+
+{% block footer %}
+{{app.translator.trans('content.footer')}}
+{% endblock %}
+
+{% block javascripts %}
+{% endblock %}

@@ -1,0 +1,3 @@
+baseUrl       : http://dev/silex-skeleton/
+environment   : development
+debug         : true

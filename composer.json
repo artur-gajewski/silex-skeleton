@@ -1,0 +1,30 @@
+{
+    "name"        : "artur-gajewski/silex-skeleton",
+    "type"        : "library",
+    "description" : "Starting point for your Silex applications",
+    "keywords"    : ["framework","silex","skeleton"],
+    "homepage"    : "https://github.com/artur-gajewski/silex-skeleton",
+    "license"     : "MIT",
+    "authors"     : [
+        {
+            "name"  : "Artur Gajewski",
+            "email" : "info@arturgajewski.com"
+        }
+    ],
+    "config": {
+        "vendor-dir": "silex/vendor"
+    },
+    "require": {
+        "php"                           : ">=5.3.2",
+        "silex/silex"                   : "dev-master",
+        "symfony/yaml"                  : "~2.1",
+        "symfony/twig-bridge"           : "2.3.*@dev",
+        "symfony/translation"           : "2.1.*",
+        "igorw/config-service-provider" : "1.0.*@dev"
+    },
+    "extra": {
+        "chmod": {
+            "silex"     : "0711"
+        }
+    }
+}
