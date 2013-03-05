@@ -30,8 +30,9 @@ Clone the project into your desired folder:
     $ curl -s http://getcomposer.org/installer | php
     $ php composer.phar install
 
-Composer creates correct access rights to silex/cache folder, but if you have problems writing to it you can chnage access right manually:
+Composer creates correct folder permission to silex/ folder, but if you have problems writing to it you can change permissions manually:
 
+    $ chmod 711 silex
     $ chmod 777 silex/cache
 
 Start development with `silex/app.php`
