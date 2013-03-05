@@ -31,6 +31,7 @@ $app['http_cache.cache_dir'] = $app['cache.path'] . '/http';
 $app->register(new Silex\Provider\HttpCacheServiceProvider());
 $app->register(new Silex\Provider\SessionServiceProvider());
 $app->register(new Igorw\Silex\ConfigServiceProvider( __DIR__ . "/resources/config/settings.yml"));
+$app->register(new Silex\Provider\UrlGeneratorServiceProvider());
 $app->register(new Silex\Provider\TranslationServiceProvider(), array(
     'locale_fallback' => $app['locale']
 ));
@@ -38,7 +39,7 @@ $app->register(new Silex\Provider\TwigServiceProvider(), array(
     'twig.path' => __DIR__ . '/views',
     'twig.class_path' => __DIR__ . '/vendor/twig/lib',
 ));
-$app->register(new Silex\Provider\UrlGeneratorServiceProvider());
+
 /**
  * Layout template
  */
@@ -55,16 +56,12 @@ $app->before(function () use ($app) {
  * Controllers
  */
 $app->match('/', function() use ($app) {
-    return $app->redirect($app['baseUrl'] . $app['locale'] . "/index");
+    return $app->redirect($app['locale']);
 })->bind('home');
 
-$app->get('/{locale}/index', function () use ($app) {
+$app->get('/{locale}', function () use ($app) {
     $body = $app['twig']->render('index.twig');
     return new Response($body, 200, array('Cache-Control' => 's-maxage=3600, public'));
-})->assert('locale',implode('|', $app['languages']));
-
-$app->get('/{locale}', function () use ($app) {
-    return  $app->redirect("/".$app['locale']."/index");
 })->assert('locale',implode('|', $app['languages']));
 
 /**
