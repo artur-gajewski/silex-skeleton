@@ -30,7 +30,13 @@ Clone the project into your desired folder:
     $ curl -s http://getcomposer.org/installer | php
     $ php composer.phar install
 
-Composer creates correct folder permission to silex/ folder, but if you have problems writing to it you can change permissions manually:
+Create local configuration file from the distribution file:
+
+    $ cp silex/resources/config/settings.yml-dist silex/resources/config/settings.yml
+
+Modify the settings.yml file to reflect your needs.
+
+Composer should create correct folder permission for silex/ folder, but if you have problems writing to it you can change permissions manually:
 
     $ chmod 711 silex/
     $ chmod 777 silex/cache

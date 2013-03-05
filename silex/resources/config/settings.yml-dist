@@ -1,2 +1,9 @@
-baseUrl
-debug: true
+# Default locale
+defaultLocale : en
+
+# Environment
+environment   : development
+
+# Should the debug feature be on?
+# (disable this in production environment)
+debug         : true

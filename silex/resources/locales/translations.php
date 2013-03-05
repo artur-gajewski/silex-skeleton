@@ -3,11 +3,12 @@
 return array(
     'en' => array(
         'homepage' => 'Homepage',
-        'head' => 'Head',
-        'content' => array('about' => 'About',
-                           'features' => 'Features',
-                           'contribute' => 'Contribute'),
-        'foot' => 'Foot',
+        'header' => 'Header',
+        'content' => array('about'      => 'About',
+                           'features'   => 'Features',
+                           'contribute' => 'Contribute',
+                           'origin'     => 'Origin'),
+        'footer' => 'Footer',
         '404' => array('title' => 'Page not found',
                        'message' => 'The requested page could not be found.'),
         'error' => array('title' => 'error',
@@ -15,18 +16,20 @@ return array(
     ),
     'de' => array(
         'homepage' => 'Startseite',
-        'head' => 'Kopf',
-        'content' => array('about' => 'Über',
-                           'features' => 'Eigenschaften',
-                           'contribute' => 'Mitmachen'),
-        'foot' => 'Fuß'
+        'header' => 'Kopf',
+        'content' => array('about'      => 'Über',
+                           'features'   => 'Eigenschaften',
+                           'contribute' => 'Mitmachen',
+                           'origin'     => 'Origin'),
+        'footer' => 'Fuß'
     ),
     'fr' => array(
         'homepage' => 'Acculeil',
-        'head' => 'Tête',
-        'content' => array('about' => 'A propos',
-                           'features' => 'Propriétés',
-                           'contribute' => 'Contribuer'),
-        'foot' => 'Pied'
+        'header' => 'Tête',
+        'content' => array('about'      => 'A propos',
+                           'features'   => 'Propriétés',
+                           'contribute' => 'Contribuer',
+                           'origin'     => 'Origin'),
+        'footer' => 'Pied'
     ),
 );

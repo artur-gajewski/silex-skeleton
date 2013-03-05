@@ -12,14 +12,6 @@ use Symfony\Component\HttpKernel\Exception\NotFoundHttpException;
 $app = new Application();
 
 /**
- * Locale
- */
-$app['locale'] = 'en';
-$app['session.default_locale'] = $app['locale'];
-$app['translator.messages'] = require __DIR__ . '/resources/locales/translations.php';
-$app['languages'] = array_keys($app['translator.messages']);
-
-/**
  * Cache
  */
 $app['cache.path'] = __DIR__ . '/cache';
@@ -32,9 +24,24 @@ $app->register(new Silex\Provider\HttpCacheServiceProvider());
 $app->register(new Silex\Provider\SessionServiceProvider());
 $app->register(new Igorw\Silex\ConfigServiceProvider( __DIR__ . "/resources/config/settings.yml"));
 $app->register(new Silex\Provider\UrlGeneratorServiceProvider());
+
+/**
+ * Locale
+ */
+$app['locale'] = 'en';
+$app['session.default_locale'] = $app['locale'];
+
 $app->register(new Silex\Provider\TranslationServiceProvider(), array(
-    'locale_fallback' => $app['locale']
+    'locale_fallback' => $app['locale'],
+    'translator.domains' => array(
+        'messages' => require __DIR__ . '/resources/locales/translations.php',
+    ),
 ));
+$app['languages'] = array_keys($app['translator.domains']['messages']);
+
+/**
+ * Twig registration
+ */
 $app->register(new Silex\Provider\TwigServiceProvider(), array(
     'twig.path' => __DIR__ . '/views',
     'twig.class_path' => __DIR__ . '/vendor/twig/lib',
@@ -53,18 +60,6 @@ $app->before(function () use ($app) {
 });
 
 /**
- * Controllers
- */
-$app->match('/', function() use ($app) {
-    return $app->redirect($app['locale']);
-})->bind('home');
-
-$app->get('/{locale}', function () use ($app) {
-    $body = $app['twig']->render('index.twig');
-    return new Response($body, 200, array('Cache-Control' => 's-maxage=3600, public'));
-})->assert('locale',implode('|', $app['languages']));
-
-/**
  * Error handler
  */
 $app->error(function (\Exception $e, $code) use ($app) {
@@ -80,5 +75,19 @@ $app->error(function (\Exception $e, $code) use ($app) {
             return $app['twig']->render('error.twig', array('code' => $code));
     }
 });
+
+/**
+ * Controllers
+ */
+$app->match('/', function() use ($app) {
+    return $app->redirect($app['locale']);
+})->bind('home');
+
+$app->get('/{locale}', function () use ($app) {
+    $body = $app['twig']->render('index.twig');
+    return new Response($body, 200, array('Cache-Control' => 's-maxage=3600, public'));
+})->assert('locale',implode('|', $app['languages']));
+
+
 
 return $app;
