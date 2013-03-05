@@ -36,9 +36,8 @@ Create local configuration file from the distribution file:
 
 Modify the settings.yml file to reflect your needs.
 
-Composer should create correct folder permission for silex/ folder, but if you have problems writing to it you can change permissions manually:
+Composer should create correct folder permission for silex/cache folder, but if you have problems writing to it you can change permissions manually:
 
-    $ chmod 711 silex/
     $ chmod 777 silex/cache
 
 Start development with `silex/app.php`
