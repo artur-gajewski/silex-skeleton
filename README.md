@@ -3,6 +3,8 @@ Silex Skeleton
 
 This project is starting point for a Silex application.
 
+Demo: http://www.arturgajewski.com/silex-skeleton
+
 Feel free to clone this project and start developing your own Silex application.
 
 This package provides:
