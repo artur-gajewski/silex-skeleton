@@ -30,7 +30,7 @@ run the `php composer.phar install` command to install it:
 
     {
         "require": {
-            "silex/silex": "1.0.*@dev"
+            "artur-gajewski/silex-skeleton": "dev-master"
         }
     }
 
