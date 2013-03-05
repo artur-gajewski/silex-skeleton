@@ -1,6 +1,6 @@
 .idea
-/cache/*
+/silex/cache/*
 /composer.phar
 /log/*
-/vendor/
+/silex/vendor/
 /web/assets/*
