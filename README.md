@@ -24,28 +24,15 @@ This package provides:
 Installation
 ------------
 
-The recommended way to install Silex is [through
-composer](http://getcomposer.org). Just create a `composer.json` file and
-run the `php composer.phar install` command to install it:
-
-    {
-        "require": {
-            "artur-gajewski/silex-skeleton": "dev-master"
-        }
-    }
-
-Alternatively, you can clone the project:
+Clone the project into your desired folder:
 
     $ git clone git@github.com:artur-gajewski/silex-skeleton.git
     $ curl -s http://getcomposer.org/installer | php
     $ php composer.phar install
 
-With Composer:
-    $ artur-gajewski/silex-skeleton
+Composer creates correct access rights to silex/cache folder, but if you have problems writing to it you can chnage access right manually:
 
-Post-install procedures:
-
-    $ chmod 777 -R silex/cache/
+    $ chmod 777 silex/cache
 
 Start development with `silex/app.php`
 

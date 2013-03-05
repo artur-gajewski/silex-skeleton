@@ -1,5 +1,5 @@
 {
-    "hash": "49d1fe1c1574b0d86b269b04fdf02d23",
+    "hash": "f93babfcf7551f7193241087ff369434",
     "packages": [
         {
             "name": "igorw/config-service-provider",
@@ -664,9 +664,7 @@
             "time": "2013-02-09 18:21:53"
         }
     ],
-    "packages-dev": [
-
-    ],
+    "packages-dev": null,
     "aliases": [
 
     ],
