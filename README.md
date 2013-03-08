@@ -29,6 +29,9 @@ Installation
 Clone the project into your desired folder:
 
     $ git clone git@github.com:artur-gajewski/silex-skeleton.git
+
+Go to your newly created folder and install Composer:
+
     $ curl -s http://getcomposer.org/installer | php
     $ php composer.phar install
 
@@ -40,7 +43,7 @@ Modify the settings.yml file to reflect your needs.
 
 Composer should create correct folder permission for silex/cache folder, but if you have problems writing to it you can change permissions manually:
 
-    $ chmod 777 silex/cache
+    $ chmod 770 silex/cache
 
 Start development with `silex/app.php`
 

@@ -24,7 +24,7 @@
     },
     "extra": {
         "chmod": {
-            "silex/cache"   : "0777"
+            "silex/cache"   : "0770"
         }
     }
 }
