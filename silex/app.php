@@ -28,7 +28,7 @@ $app->register(new Silex\Provider\UrlGeneratorServiceProvider());
 /**
  * Locale
  */
-$app['locale'] = 'en';
+$app['locale'] = isset($app['defaultLocale']) ? $app['defaultLocale'] : 'en';
 $app['session.default_locale'] = $app['locale'];
 
 $app->register(new Silex\Provider\TranslationServiceProvider(), array(
