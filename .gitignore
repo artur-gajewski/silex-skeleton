@@ -1,7 +1,7 @@
 .idea
 /silex/cache/*
 /composer.phar
-/log/*
+/silex/log/*
 /silex/vendor/
 /silex/resources/config/settings.yml
 /web/assets/*

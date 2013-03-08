@@ -3,6 +3,7 @@
 require_once __DIR__ . '/vendor/autoload.php';
 
 use Silex\Application;
+use Silex\Provider\MonologServiceProvider;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\HttpFoundation\RedirectResponse;
@@ -24,6 +25,15 @@ $app->register(new Silex\Provider\HttpCacheServiceProvider());
 $app->register(new Silex\Provider\SessionServiceProvider());
 $app->register(new Igorw\Silex\ConfigServiceProvider( __DIR__ . "/resources/config/settings.yml"));
 $app->register(new Silex\Provider\UrlGeneratorServiceProvider());
+
+/**
+ * Logging
+ */
+$app->register(new MonologServiceProvider(), array(
+    'monolog.logfile' => __DIR__.'/resources/log/app.log',
+    'monolog.name'    => 'app',
+    'monolog.level'   => 300 // = Logger::WARNING
+));
 
 /**
  * Locale
